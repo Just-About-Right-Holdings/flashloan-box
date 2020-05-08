@@ -36,7 +36,7 @@ contract Flashloan is FlashLoanReceiverBase {
      */
     function flashloan(address _asset) public onlyOwner {
         bytes memory data = "";
-        uint amount = 1 ether;
+        uint amount = 100;
 
         ILendingPool lendingPool = ILendingPool(addressesProvider.getLendingPool());
         lendingPool.flashLoan(address(this), _asset, amount, data);
